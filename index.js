@@ -116,6 +116,11 @@ for (let i = 0; i < months; i++) {
         }
     } 
 
+
+console.log ("Financial Analysis");
+
+console.log ("----------------------------");
+
 console.log("Total Months: " + months);
 
 console.log("Total: $" + total);
