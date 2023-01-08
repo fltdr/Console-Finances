@@ -86,3 +86,50 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// The total number of months included in the dataset.
+
+let months = finances.length; 
+
+// The net total amount of Profit/Losses over the entire period.
+
+let total = 0;
+
+let max = 0;
+let min = 0;
+
+let maxDate = "never";
+let minDate = "never";
+
+for (let i = 0; i < months; i++) {
+    let value = finances[i][1];
+    let date = finances[i][0];
+    total = total + value;
+        if (max < value ) {
+            max = value;
+            maxDate = date;
+        }
+
+        if (min > value) {
+            min = value;
+            minDate = date;
+        }
+    } 
+
+console.log("Total Months: " + months);
+
+console.log("Total: $" + total);
+
+let avg = 0;
+
+if (months > 0) {
+    avg = (total / months).toFixed(2);
+}
+
+console.log("Average Change: $" + avg);
+
+console.log("Greatest Increase in Profits: " + maxDate + " ($" + max + ")");
+
+console.log("Greatest Decrease in Profits: " + minDate + " ($" + min + ")");
+
+
